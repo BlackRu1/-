@@ -1,0 +1,38 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+     const int row=4;
+     int temp;
+     int i,j;
+     int sz[row][row]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+    cout<<"初始状态："<<endl;
+for (i=0;i<row;i++)
+{
+    for(j=0;j<row;j++)
+        cout<<setw(4)<<sz[i][j];
+    cout<<endl;
+
+}
+for (i=0;i<row;i++)
+for(j=i+1;j<row;j++)
+{
+    temp=sz[i][j];
+    sz[i][j]=sz[j][i];
+    sz[j][i]=temp;
+}
+
+    cout<<"翻转后状态："<<endl;
+
+    for (i=0;i<row;i++)
+    {
+        for(j=0;j<row;j++)
+            cout<<setw(4)<<sz[i][j];
+        cout<<endl;
+
+    }
+
+    std::cout << "Hello, World!" << std::endl;
+
+    return 0;
+}
